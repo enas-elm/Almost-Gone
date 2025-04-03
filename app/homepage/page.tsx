@@ -18,7 +18,7 @@ export default function Homepage() {
       
       <section className="px-6 py-12 ">
         <h2 className="text-4xl font-bold leading-tight text-[#E36017]">
-          BUY BEFORE IT'S TOO LATE,
+          BUY BEFORE IT&apos;S TOO LATE,
           <br />
           <span className="text-black">JUST LIKE THEM.</span>
         </h2>

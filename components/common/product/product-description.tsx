@@ -19,8 +19,13 @@ export function ProductDescription({
     <div>
       <div className="mb-6 flex flex-col border-b pb-6 dark:border-neutral-700">
         <h1 className="mb-2 text-5xl font-medium">{title}</h1>
-        <div className="mr-auto w-auto rounded-full bg-[#D53200] p-2 text-sm text-white">
-          <Price amount={amount} />
+        <div className="flex gap-2">
+          <div className="w-auto rounded-full bg-[#D53200] p-2 text-sm text-white">
+            <Price amount={amount} />
+          </div>
+          <div className="font-bold w-auto rounded-full bg-[#D53200] p-2 text-sm text-white">
+            <p>{stock} left</p>
+          </div>
         </div>
       </div>
 

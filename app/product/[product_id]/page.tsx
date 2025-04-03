@@ -45,26 +45,26 @@ export default async function Product({
           ALMOST GONE
         </Link>
         <nav className="flex gap-8 text-sm items-center">
-          <a
+          <Link
             className="h-fit text-base relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
             href="/"
           >
             SHOP
-          </a>
-          <a
+          </Link>
+          <Link
             className="h-fit text-base relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
             href="/"
           >
             LEARN MORE
-          </a>
-          <a
+          </Link>
+          <Link
             className="h-fit text-base relative after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
             href="https://www.worldwildlife.org/pages/ways-to-support-wwf"
             target="_blank"
             rel="noopener noreferrer"
           >
             DONATE
-          </a>
+          </Link>
           <div className="flex gap-4">
             <div className="h-[50px] w-[50px] rounded-full bg-white flex items-center justify-center cursor-not-allowed">
               <img
@@ -73,7 +73,7 @@ export default async function Product({
                 className="w-6 h-6"
               />
             </div>
-            <a
+            <Link
               href="/auth/register"
               className="h-[50px] w-[50px] rounded-full bg-white flex items-center justify-center cursor-pointer hover:opacity-60 transition-opacity"
             >
@@ -82,7 +82,7 @@ export default async function Product({
                 alt="Eye icon"
                 className="w-6 h-6"
               />
-            </a>
+            </Link>
           </div>
         </nav>
       </header>

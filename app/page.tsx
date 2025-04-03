@@ -60,7 +60,7 @@ export default function Homepage() {
           </header>
 
           <section className="mt-16">
-            <h2 className="text-5xl xl:text-9xl font-bold leading-tight text-[#E36017]">
+            <h2 className="text-5xl xl:text-9xl font-bold leading-tight text-[#D53200]">
               BUY BEFORE IT&apos;S TOO LATE,
               <br />
               <span className="text-black">JUST LIKE THEM.</span>
@@ -68,7 +68,7 @@ export default function Homepage() {
             <div className="mt-[21px] flex gap-2 ">
               <button
                 onClick={scrollToProducts}
-                className="flex items-center font-light justify-center gap-3 rounded-full bg-[#E36017] h-11 px-6 py-2 text-white  text-base hover:bg-orange-700 transition cursor-pointer"
+                className="flex items-center font-light justify-center gap-3 rounded-full bg-[#D53200] h-11 px-6 py-2 text-white  text-base hover:bg-[#b32a00] transition cursor-pointer"
               >
                 <img
                   src="/images/icon-search.svg"
@@ -150,7 +150,7 @@ export default function Homepage() {
             ))}
           </div>
           <div className="mt-6">
-            <button className="flex ml-155  items-center font-light justify-center gap-3 rounded-full bg-[#E36017] px-5 py-2 text-white  text-base hover:bg-orange-700 transition">
+            <button className="flex ml-155  items-center font-light justify-center gap-3 rounded-full bg-[#D53200] px-5 py-2 text-white  text-base hover:bg-[#b32a00] transition">
               <img
                 src="/assets/vector.png"
                 alt="Search icon"
@@ -189,7 +189,7 @@ export default function Homepage() {
               href="https://www.worldwildlife.org/pages/ways-to-support-wwf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center font-light gap-3 rounded-full bg-[#E36017] px-6 py-2 text-white text-base hover:bg-orange-700 transition"
+              className="mt-8 inline-flex items-center font-light gap-3 rounded-full bg-[#D53200] px-6 py-2 text-white text-base hover:bg-[#b32a00] transition"
             >
               <img
                 src="/images/icon-donate.svg"
@@ -209,7 +209,7 @@ export default function Homepage() {
 
         <div className="h-64"></div>
 
-        <footer className="bg-[#E36017] flex text-white text-center p-6 text-[100px] font-black relative z-10 h-[300px] items-center justify-between">
+        <footer className="bg-[#D53200] flex text-white text-center p-6 text-[100px] font-black relative z-10 h-[300px] items-center justify-between">
           <div>ALMOST GONE</div>
           <div
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

@@ -1,15 +1,14 @@
 import { NotFoundError } from "@/errors/notFoundError";
 import { Product, productSchema } from "@/models/productSchema";
 import { createClient } from "@/utils/supabase/server";
-import { UUID } from "crypto";
 
 export interface IProductService {
-  getProductById(id: UUID): Promise<Product>;
+  getProductById(id: string): Promise<Product>;
   getProducts(): Promise<Product[]>;
 }
 
 export class ProductService implements IProductService {
-  async getProductById(id: UUID): Promise<Product> {
+  async getProductById(id: string): Promise<Product> {
     const supabase = await createClient();
     const { data, error } = await supabase
       .from("products")
@@ -41,6 +40,8 @@ export class ProductService implements IProductService {
     if (error) {
       throw new Error(`Database error: ${error.message}`);
     }
+    console.log(data);
+    console.log(error);
     if (!data) return [];
 
     return data.flatMap((product) => {

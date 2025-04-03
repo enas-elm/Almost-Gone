@@ -8,7 +8,7 @@ import { GridTileImage } from "../grid/tile";
 export default function Gallery({
   images,
 }: {
-  images: { src: string; altText: string }[];
+  images: string[];
 }) {
   const [imageIndex, setImageIndex] = useState(0);
 
@@ -27,8 +27,8 @@ export default function Gallery({
             className="h-full w-full object-contain"
             fill
             sizes="(min-width: 1024px) 66vw, 100vw"
-            alt={images[imageIndex].altText}
-            src={images[imageIndex].src}
+            alt=''
+            src={images[imageIndex]}
             priority
           />
         )}
@@ -63,7 +63,7 @@ export default function Gallery({
           {images.map((image, index) => {
             const isActive = index === imageIndex;
             return (
-              <li key={image.src} className="h-20 w-20">
+              <li key={image} className="h-20 w-20">
                 <button
                   type="button"
                   onClick={() => setImageIndex(index)}
@@ -71,8 +71,8 @@ export default function Gallery({
                   className="h-full w-full"
                 >
                   <GridTileImage
-                    alt={image.altText}
-                    src={image.src}
+                    alt=''
+                    src={image}
                     width={80}
                     height={80}
                     active={isActive}

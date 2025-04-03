@@ -1,7 +1,7 @@
 import { NotFoundError } from "@/errors/notFoundError";
+import { createClient } from "@/lib/supabase/server";
 import { productSchema } from "@/models/productSchema";
 import { ProductService } from "@/services/productService";
-import { createClient } from "@/utils/supabase/server";
 import { UUID } from "crypto";
 
 // Mock dependencies

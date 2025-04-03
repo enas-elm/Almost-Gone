@@ -1,6 +1,6 @@
 import { NotFoundError } from "@/errors/notFoundError";
+import { createClient } from "@/lib/supabase/server";
 import { Product, productSchema } from "@/models/productSchema";
-import { createClient } from "@/utils/supabase/server";
 
 export interface IProductService {
   getProductById(id: string): Promise<Product>;

@@ -36,7 +36,6 @@ export default function Homepage() {
             </div>
           </nav>
         </header>
-
         <section className="mt-32">
           <h2 className="text-5xl xl:text-9xl font-bold leading-tight text-[#E36017]">
             BUY BEFORE IT'S TOO LATE,
@@ -61,7 +60,7 @@ export default function Homepage() {
               Learn more about the cause
             </button>
           </div>
-
+          
           <div className="mt-12 relative h-[800px] w-[100vw] left-1/2 -translate-x-1/2">
             {[
               {

@@ -61,7 +61,7 @@ export default function Homepage() {
 
           <section className="mt-16">
             <h2 className="text-5xl xl:text-9xl font-bold leading-tight text-[#E36017]">
-              BUY BEFORE IT'S TOO LATE,
+              BUY BEFORE IT&apos;S TOO LATE,
               <br />
               <span className="text-black">JUST LIKE THEM.</span>
             </h2>
@@ -140,7 +140,7 @@ export default function Homepage() {
         {/* Product Grid */}
         <section id="products" className="px-6 py-12 relative z-10">
           <h3 className="text-2xl font-black mb-2">
-            DISCOVER WHAT'S ALMOST GONE,
+            DISCOVER WHAT&apos;S ALMOST GONE,
             <br />
             <span>STOCK DWINDLES AS SPECIES FADE AWAY.</span>
           </h3>
@@ -175,9 +175,9 @@ export default function Homepage() {
               highlight the urgency of their preservation by reflecting the
               dwindling numbers in real time. Every item here represents a
               species that could soon be gone forever, urging us all to act
-              before it's too late. This project is a call to action for those
-              who care about the planet and its future, reminding us that we
-              hold the power to make a difference. By shedding light on these
+              before it&apos;s too late. This project is a call to action for
+              those who care about the planet and its future, reminding us that
+              we hold the power to make a difference. By shedding light on these
               species, we hope to inspire a movement for change and
               preservation.
             </p>

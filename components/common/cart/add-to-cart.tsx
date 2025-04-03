@@ -17,7 +17,7 @@ function SubmitButton({ stock }: { stock: number }) {
   }
 
   return (
-    <button className={clsx(baseClasses, "hover:opacity-90")}>
+    <button className={clsx(baseClasses, "hover:opacity-90, cursor-pointer")}>
       <div className="absolute left-0 ml-4">
         <PlusIcon className="h-5" />
       </div>

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import Label from "../label";
 
 export function GridTileImage({
@@ -17,7 +17,7 @@ export function GridTileImage({
     currencyCode: string;
     position?: "bottom" | "center";
   };
-} & Omit<React.ComponentProps<typeof Image>, "width" | "height">) {
+} & ImageProps) {
   return (
     <div
       className={clsx(

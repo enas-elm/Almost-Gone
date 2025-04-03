@@ -89,7 +89,6 @@ export default function Homepage() {
                 Learn more about the cause
               </button>
             </div>
-
             <div className="mt-12 relative h-[800px] w-[100vw] left-1/2 -translate-x-1/2">
               {[
                 {

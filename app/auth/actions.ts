@@ -3,13 +3,22 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import { signInWithEmail, signUpWithEmail } from "@/services/authService";
-import { authSchema } from "@/lib/validators/authSchema";
+import {
+  signInWithEmail,
+  signOut,
+  signUpWithEmail,
+} from "@/services/authService";
+import { loginSchema, registerSchema } from "@/lib/validators/authSchema";
 
 export async function login(formData: FormData) {
   const supabase = await createClient();
+  console.log("Login form data:", formData);
 
-  const parsed = authSchema.safeParse({
+  for (const [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+
+  const parsed = loginSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
   });
@@ -30,15 +39,21 @@ export async function login(formData: FormData) {
   }
 
   revalidatePath("/", "layout");
-  redirect("/dashboard");
+  redirect("/");
 }
 
 export async function signup(formData: FormData) {
   const supabase = await createClient();
+  console.log("Signup form data:", formData);
 
-  const parsed = authSchema.safeParse({
+  for (const [key, value] of formData.entries()) {
+    console.log(`${key}: ${value}`);
+  }
+
+  const parsed = registerSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
+    repeatPassword: formData.get("repeatPassword"),
   });
 
   if (!parsed.success) {
@@ -58,4 +73,16 @@ export async function signup(formData: FormData) {
 
   revalidatePath("/", "layout");
   redirect("/");
+}
+
+export async function logout() {
+  const supabase = await createClient();
+
+  const { error } = await signOut(supabase);
+
+  if (error) {
+    redirect("/error?type=logout");
+  }
+
+  redirect("/auth/login");
 }

@@ -62,35 +62,35 @@ export type Database = {
       }
       products: {
         Row: {
-          animal_decription: string | null
+          animal_decription: string
           created_at: string
           id: string
           images: string[]
           name: string
           price: number
-          product_description: string | null
+          product_description: string
           stock: number
           updated_at: string
         }
         Insert: {
-          animal_decription?: string | null
+          animal_decription: string
           created_at?: string
           id?: string
           images: string[]
           name: string
           price: number
-          product_description?: string | null
+          product_description: string
           stock: number
           updated_at?: string
         }
         Update: {
-          animal_decription?: string | null
+          animal_decription?: string
           created_at?: string
           id?: string
           images?: string[]
           name?: string
           price?: number
-          product_description?: string | null
+          product_description?: string
           stock?: number
           updated_at?: string
         }

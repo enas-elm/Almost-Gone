@@ -176,41 +176,41 @@ export default function Homepage() {
 
         {/* Product Grid */}
         <section id="products" className="px-6 py-12 relative z-10">
-          <h3 className="text-2xl font-black mb-2">
+          <h3 className="text-5xl font-black mb-2">
             DISCOVER WHAT&apos;S ALMOST GONE,
             <br />
             <span>STOCK DWINDLES AS SPECIES FADE AWAY.</span>
           </h3>
-          { loading ? <p>Loading products...</p> : error ? <p>Error: {error}</p> : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-           {products.map((tile, index) => (
-             <Link href={`/product/${tile.id}`} key={index}>
-               <div className="relative aspect-square w-full">
-                 <GridTileImage
-                   src={tile.images[0]?? ""}
-                   alt={tile.name}
-                   stock={tile.stock}
-                   fill
-                   label={{amount: tile.price.toString(), title: tile.name, currencyCode: "€"}}
-                 />
-               </div>
-             </Link>
-           ))}
-         </div>}
-          <div className="mt-6">
-            <button className="flex ml-155  items-center font-light justify-center gap-3 rounded-full bg-[#D53200] px-5 py-2 text-white  text-base hover:bg-[#b32a00] transition">
-              <img
-                src="/assets/vector.png"
-                alt="Search icon"
-                className="w-3 h-3"
-              />
-              Discover All
-            </button>
-          </div>
+          {loading ? (
+            <p>Loading products...</p>
+          ) : error ? (
+            <p>Error: {error}</p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+              {products.map((tile, index) => (
+                <Link href={`/product/${tile.id}`} key={index}>
+                  <div className="relative aspect-square w-full">
+                    <GridTileImage
+                      src={tile.images[0] ?? ""}
+                      alt={tile.name}
+                      stock={tile.stock}
+                      fill
+                      label={{
+                        amount: tile.price.toString(),
+                        title: tile.name,
+                        currencyCode: "€",
+                      }}
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </section>
 
         <section
           id="about"
-          className="px-6 py-12 flex flex-col md:flex-row gap-6 items-start relative z-10"
+          className="px-6 py-12 my-32 flex flex-col md:flex-row gap-6 items-start relative z-10"
         >
           <div className="md:w-1/2 text-[20px] leading-9">
             <p>

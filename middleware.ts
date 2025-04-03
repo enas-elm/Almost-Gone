@@ -14,7 +14,8 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      * - root (/) and product pages (/product/[product_id])
+     * - images (public images)
      */
-    "/((?!api|_next/static|_next/image|assets|favicon.ico|sitemap.xml|robots.txt|homepage|product|product/[^/]+$|$).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|images|$|product/[^/]+$).*)",
   ],
 };

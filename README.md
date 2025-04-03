@@ -19,7 +19,7 @@ Almost Gone is a modern e-commerce platform built with Next.js, dedicated to sel
   - Tailwind CSS 4
   - Radix UI
   - Heroicons
-  - Lucide React
+  - Shadcn
 
 - **Backend**:
   - Supabase

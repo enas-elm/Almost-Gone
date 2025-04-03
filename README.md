@@ -1,3 +1,5 @@
+![Almost Gone Banner](https://viyxdvtppranqbnzygjq.supabase.co/storage/v1/object/public/banner//banner.png)
+
 # Almost Gone
 
 Almost Gone is a modern e-commerce platform built with Next.js, dedicated to selling products related to endangered species conservation.

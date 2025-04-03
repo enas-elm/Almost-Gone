@@ -1,5 +1,34 @@
 'use client';
+
+import { GridTileImage } from '@/components/common/grid/tile';
+import { Product } from '@/models/productSchema';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
 export default function Homepage() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch("/api/products");
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const data = await response.json();
+        setProducts(data);
+      } catch (err) {
+        setError("Failed to fetch products");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchProducts();
+  }, []);
+
   const scrollToProducts = () => {
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -152,11 +181,21 @@ export default function Homepage() {
             <br />
             <span>STOCK DWINDLES AS SPECIES FADE AWAY.</span>
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-            {[...Array(8)].map((_, idx) => (
-              <div key={idx} className="bg-white shadow rounded-lg h-60" />
-            ))}
-          </div>
+          { loading ? <p>Loading products...</p> : error ? <p>Error: {error}</p> : <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+           {products.map((tile, index) => (
+             <Link href={`/product/${tile.id}`} key={index}>
+               <div className="relative aspect-square w-full">
+                 <GridTileImage
+                   src={tile.images[0]?? ""}
+                   alt={tile.name}
+                   stock={tile.stock}
+                   fill
+                   label={{amount: tile.price.toString(), title: tile.name, currencyCode: "€"}}
+                 />
+               </div>
+             </Link>
+           ))}
+         </div>}
           <div className="mt-6">
             <button className="flex ml-155  items-center font-light justify-center gap-3 rounded-full bg-[#D53200] px-5 py-2 text-white  text-base hover:bg-[#b32a00] transition">
               <img
